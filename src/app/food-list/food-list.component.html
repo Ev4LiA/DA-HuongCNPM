@@ -1,0 +1,12 @@
+<app-food-overlay
+  *ngIf="visible"
+  [food]="foodChose"
+  (close)="onToggleOverlay($event)"
+></app-food-overlay>
+<div class="container">
+  <app-food-item
+    *ngFor="let food of foods"
+    [food]="food"
+    (open)="onToggleOverlay($event)"
+  ></app-food-item>
+</div>
