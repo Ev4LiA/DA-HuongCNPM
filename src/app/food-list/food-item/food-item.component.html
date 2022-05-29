@@ -1,5 +1,12 @@
-<div class="container" (click)="onOpen()">
-  <img src="" alt="" />
-  <h4>{{ food.name }}</h4>
-  <p>{{ food.price }}</p>
+<div class="container" (click)="onOpen()" class="card">
+  <div class="card-side">
+    <img src="{{ food.image }}" alt="{{ food.name }}" />
+    <div class="card-info">
+      <h4>{{ food.name }}</h4>
+      <p>Price: {{ food.price }}</p>
+    </div>
+    <div class="card-footer">
+      <button (click)="onOpen()" class="btn">Add To Cart</button>
+    </div>
+  </div>
 </div>
