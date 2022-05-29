@@ -10,15 +10,7 @@ import * as FoodsAction from '../food-list/store/food.action';
   styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent implements OnInit {
-  foodTypes: string[] = [
-    'All',
-    'Coffee',
-    'Tea',
-    'Juice',
-    'Meal',
-    'Snack',
-    'Dessert',
-  ];
+  foodTypes: string[] = ['All', 'Breakfast', 'Lunch', 'Main Dish', 'Side Dish'];
 
   selectedType?: string = 'All';
 

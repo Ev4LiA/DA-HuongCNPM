@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import data from '../../data';
 import { Food } from '../Food.model';
 import * as FoodActions from './food.action';
 
@@ -13,44 +13,7 @@ export interface State {
 
 const initialState: State = {
   filtered_foods: [],
-  all_foods: [
-    {
-      id: '1',
-      name: 'pho',
-      type: 'Meal',
-      price: 20,
-    },
-    {
-      id: '2',
-      name: 'bun',
-      type: 'Meal',
-      price: 20,
-    },
-    {
-      id: '3',
-      name: 'com',
-      type: 'Meal',
-      price: 20,
-    },
-    {
-      id: '4',
-      name: 'Cappuchino',
-      type: 'Coffee',
-      price: 20,
-    },
-    {
-      id: '5',
-      name: 'Expresso',
-      type: 'Coffee',
-      price: 20,
-    },
-    {
-      id: '6',
-      name: 'kem',
-      type: 'Dessert',
-      price: 20,
-    },
-  ],
+  all_foods: data,
   filters: {
     text: '',
     type: 'All',
@@ -81,7 +44,7 @@ export function FoodReducer(
 
       if (type !== 'All') {
         tempFoods = tempFoods.filter((item) => {
-          return item.type === type;
+          return item.type.includes(type);
         });
       }
 
