@@ -1,4 +1,4 @@
-<div class="container" (click)="onOpen()" class="card">
+<div class="card">
   <div class="card-side">
     <img src="{{ food.image }}" alt="{{ food.name }}" />
     <div class="card-info">
@@ -6,7 +6,7 @@
       <p>Price: {{ food.price }}</p>
     </div>
     <div class="card-footer">
-      <button (click)="onOpen()" class="btn">Add To Cart</button>
+      <button class="btn" (click)="onOpen()">Add To Cart</button>
     </div>
   </div>
 </div>

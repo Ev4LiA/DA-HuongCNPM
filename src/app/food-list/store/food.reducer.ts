@@ -52,6 +52,10 @@ export function FoodReducer(
       return { ...state, filtered_foods: tempFoods };
     }
 
+    case FoodActions.UPDATE_FOODS: {
+      return { ...state, all_foods: action.payload };
+    }
+
     default:
       return state;
       break;
