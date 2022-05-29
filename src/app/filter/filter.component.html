@@ -1,1 +1,12 @@
-<p>filter works!</p>
+<div class="">
+  <ul class="tab">
+    <button
+      *ngFor="let type of foodTypes"
+      (click)="onOpenTab(type)"
+      [class.selected]="type === selectedType"
+      class="tablinks"
+    >
+      {{ type }}
+    </button>
+  </ul>
+</div>

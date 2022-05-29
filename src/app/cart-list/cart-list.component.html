@@ -3,4 +3,7 @@
     *ngFor="let cartEL of (cartsState | async).carts"
     [cart]="cartEL"
   ></app-cart-item>
+  <button *ngIf="(cartsState | async).carts.length > 0" (click)="onCheckout()">
+    Check Out
+  </button>
 </div>

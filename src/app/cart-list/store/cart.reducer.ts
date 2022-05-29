@@ -40,7 +40,7 @@ export function CartReducer(
           const newItem: Cart = {
             id,
             name,
-            amount: 1,
+            amount,
             price,
           };
 

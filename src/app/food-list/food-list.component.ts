@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Food } from './Food.model';
-import { FoodsService } from './foods.service';
 
 @Component({
   selector: 'app-food-list',
@@ -8,14 +9,33 @@ import { FoodsService } from './foods.service';
   styleUrls: ['./food-list.component.css'],
 })
 export class FoodListComponent implements OnInit {
-  foods: Food[] = [];
+  foodsState: Observable<{
+    filtered_foods: Food[];
+    all_foods: Food[];
+    filters: {
+      text: string;
+      type: string;
+    };
+  }>;
+
   visible: boolean = false;
   foodChose: Food;
 
-  constructor(private foodsService: FoodsService) {}
+  constructor(
+    private store: Store<{
+      foods: {
+        filtered_foods: Food[];
+        all_foods: Food[];
+        filters: {
+          text: string;
+          type: string;
+        };
+      };
+    }>
+  ) {}
 
   ngOnInit(): void {
-    this.foods = this.foodsService.getFoods();
+    this.foodsState = this.store.select('foods');
   }
 
   onToggleOverlay(food: Food) {

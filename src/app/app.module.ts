@@ -13,6 +13,12 @@ import { FoodOverlayComponent } from './food-list/food-overlay/food-overlay.comp
 import { StoreModule } from '@ngrx/store';
 import { CartReducer } from './cart-list/store/cart.reducer';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CheckoutPageComponent } from './page/checkout-page/checkout-page.component';
+import { FoodReducer } from './food-list/store/food.reducer';
+import { CustomerPageComponent } from './page/customer-page/customer-page.component';
+import { CheckoutListComponent } from './checkout-list/checkout-list.component';
+import { CheckoutItemComponent } from './checkout-list/checkout-item/checkout-item.component';
+import { CheckoutColComponent } from './checkout-list/checkout-col/checkout-col.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +30,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CartListComponent,
     CartItemComponent,
     FoodOverlayComponent,
+    CheckoutPageComponent,
+    CustomerPageComponent,
+    CheckoutListComponent,
+    CheckoutItemComponent,
+    CheckoutColComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ carts: CartReducer }),
+    StoreModule.forRoot({ carts: CartReducer, foods: FoodReducer }),
     FontAwesomeModule,
   ],
   providers: [],

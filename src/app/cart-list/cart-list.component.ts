@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { Cart } from './cart.model';
-import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -11,13 +11,17 @@ import { CartService } from './cart.service';
 })
 export class CartListComponent implements OnInit {
   cartsState: Observable<{ carts: Cart[]; total_amount: number }>;
-  private subscription: Subscription;
 
   constructor(
-    private store: Store<{ carts: { carts: Cart[]; total_amount: number } }>
+    private store: Store<{ carts: { carts: Cart[]; total_amount: number } }>,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.cartsState = this.store.select('carts');
+  }
+
+  onCheckout() {
+    this.router.navigate(['/checkout']);
   }
 }

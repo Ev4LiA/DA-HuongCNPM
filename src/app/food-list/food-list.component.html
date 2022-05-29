@@ -5,7 +5,7 @@
 ></app-food-overlay>
 <div class="container">
   <app-food-item
-    *ngFor="let food of foods"
+    *ngFor="let food of (foodsState | async).filtered_foods"
     [food]="food"
     (open)="onToggleOverlay($event)"
   ></app-food-item>
