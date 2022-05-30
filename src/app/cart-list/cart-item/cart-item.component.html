@@ -1,15 +1,24 @@
-<div class="container">
-  <img src="" alt="{{ cart.name }}" />
+<article>
+  <img src="{{ cart.image }}" alt="{{ cart.name }}" />
   <div class="content">
-    <h3>{{ cart.name }}</h3>
+    <h4>{{ cart.name }}</h4>
     <div class="add-to-cart">
-      <p class="amouny">
+      <p class="amount">
         <span>Quantity: </span>
         <fa-icon [icon]="faMinus" (click)="onMinus()"></fa-icon>
         {{ cart.amount }}
         <fa-icon [icon]="faPlus" (click)="onPlus()"></fa-icon>
       </p>
-      <h4>{{ cart.price }}</h4>
+      <div class="price">
+        <span>
+          <h4>Price: {{ cart.price }}</h4>
+        </span>
+        <fa-icon
+          [icon]="faTrash"
+          (click)="onRemove()"
+          class="delete-btn"
+        ></fa-icon>
+      </div>
     </div>
   </div>
-</div>
+</article>

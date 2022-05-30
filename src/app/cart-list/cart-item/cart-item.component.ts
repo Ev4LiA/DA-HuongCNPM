@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Cart } from '../cart.model';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import * as CartActions from '../store/cart.actions';
 
@@ -12,6 +12,7 @@ import * as CartActions from '../store/cart.actions';
 export class CartItemComponent implements OnInit {
   faPlus = faPlus;
   faMinus = faMinus;
+  faTrash = faTrash;
 
   @Input() cart: Cart;
 
@@ -30,5 +31,9 @@ export class CartItemComponent implements OnInit {
     this.store.dispatch(
       new CartActions.toggleCartItemAmount({ id: this.cart.id, value: 'dec' })
     );
+  }
+
+  onRemove() {
+    this.store.dispatch(new CartActions.removeCartItem(this.cart.id));
   }
 }

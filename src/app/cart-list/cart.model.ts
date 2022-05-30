@@ -1,7 +1,7 @@
 export interface Cart {
   id: string;
   name: string;
-  //  imageUrl: string,
+  image: string;
   price: number;
   amount: number;
   //  maxStock: number

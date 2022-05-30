@@ -6,7 +6,8 @@
   height: 28rem;
   position: relative;
   perspective: 1500px;
-  background: var(--clr-white);
+  background: var(--clr-primary-9);
+  border: 1px solid var(--clr-primary-2);
   border-radius: var(--radius);
 }
 .card-info {

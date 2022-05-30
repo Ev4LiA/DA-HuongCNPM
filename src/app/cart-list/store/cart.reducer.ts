@@ -8,7 +8,16 @@ export interface State {
 }
 
 const initialState: State = {
-  carts: [],
+  carts: [
+    {
+      id: 'FOOD0',
+      name: ' Skillet Chicken and Mushroom Wine Sauce ',
+      price: 750000,
+      image:
+        'https://www.savingdessert.com/wp-content/uploads/2015/10/Skillet-Chicken-and-Mushroom-Wine-Sauce-4-500x500.jpg',
+      amount: 1,
+    },
+  ],
   total_amount: 0,
 };
 
@@ -20,10 +29,10 @@ export function CartReducer(
     case CartActions.ADD_TO_CART:
       {
         const { food, amount } = action.payload;
-        const { id, name, price } = food;
+        const { id, name, image, price } = food;
         const tempFood = state.carts.find((f) => f.id === id);
         console.log(state.carts);
-        console.log(id, amount, food);
+        console.log(id, amount, image, food);
 
         if (tempFood) {
           const tempCarts = state.carts.map((item) => {
@@ -40,6 +49,7 @@ export function CartReducer(
           const newItem: Cart = {
             id,
             name,
+            image,
             amount,
             price,
           };

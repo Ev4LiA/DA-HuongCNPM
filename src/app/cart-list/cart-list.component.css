@@ -1,0 +1,7 @@
+.container {
+  margin: 10px 5px;
+}
+
+h3 {
+  color: var(--clr-primary-3);
+}
