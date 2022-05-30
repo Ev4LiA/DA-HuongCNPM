@@ -25,6 +25,7 @@ export class toggleCartItemAmount implements Action {
 export class clearCart implements Action {
   readonly type = CLEAR_CART;
 }
+
 export class countCartTotals implements Action {
   readonly type = COUNT_CART_TOTALS;
 }

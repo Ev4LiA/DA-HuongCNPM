@@ -1,0 +1,10 @@
+.container {
+  margin: 10px auto;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 400px repeat(4, 1fr);
+  column-gap: 10px;
+  border: 1px solid var(--clr-grey-5);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}

@@ -4,6 +4,7 @@ import { Food } from '../Food.model';
 export const UPDATE_FILTERS = 'UPDATE_FILTERS';
 export const FILTERED_FOODS = 'FILTERED_FOODS';
 export const UPDATE_FOODS = 'UPDATE_FOODS';
+export const UPDATE_SEARCH = 'UPDATE_SEARCH';
 
 export class updateFilters implements Action {
   readonly type = UPDATE_FILTERS;
@@ -19,4 +20,13 @@ export class updateFoods implements Action {
   constructor(public payload: Food[]) {}
 }
 
-export type FoodActions = filteredFoods | updateFilters | updateFoods;
+export class updateSearch implements Action {
+  readonly type = UPDATE_SEARCH;
+  constructor(public payload: string) {}
+}
+
+export type FoodActions =
+  | filteredFoods
+  | updateFilters
+  | updateFoods
+  | updateSearch;

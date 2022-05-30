@@ -9,6 +9,7 @@ export interface State {
     text: string;
     type: string;
   };
+  amount: number;
 }
 
 const initialState: State = {
@@ -18,6 +19,7 @@ const initialState: State = {
     text: '',
     type: 'All',
   },
+  amount: 1,
 };
 
 export function FoodReducer(
@@ -27,6 +29,10 @@ export function FoodReducer(
   switch (action.type) {
     case FoodActions.UPDATE_FILTERS: {
       return { ...state, filters: { ...state.filters, type: action.payload } };
+    }
+
+    case FoodActions.UPDATE_SEARCH: {
+      return { ...state, filters: { ...state.filters, text: action.payload } };
     }
 
     case FoodActions.FILTERED_FOODS: {

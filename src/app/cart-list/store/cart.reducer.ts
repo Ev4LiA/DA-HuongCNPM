@@ -1,10 +1,10 @@
-import { newArray } from '@angular/compiler/src/util';
 import { Cart } from '../cart.model';
 import * as CartActions from './cart.actions';
 
 export interface State {
   carts: Cart[];
   total_amount: number;
+  total_item: number;
 }
 
 const initialState: State = {
@@ -19,6 +19,7 @@ const initialState: State = {
     },
   ],
   total_amount: 0,
+  total_item: 1,
 };
 
 export function CartReducer(
@@ -31,8 +32,6 @@ export function CartReducer(
         const { food, amount } = action.payload;
         const { id, name, image, price } = food;
         const tempFood = state.carts.find((f) => f.id === id);
-        console.log(state.carts);
-        console.log(id, amount, image, food);
 
         if (tempFood) {
           const tempCarts = state.carts.map((item) => {
@@ -96,13 +95,20 @@ export function CartReducer(
     }
 
     case CartActions.COUNT_CART_TOTALS: {
-      const total_amount = state.carts.reduce((total, item) => {
-        const { amount, price } = item;
-        total += amount * price;
-        return total;
-      }, 0);
+      const { total_amount, total_item } = state.carts.reduce(
+        (total, item) => {
+          const { amount, price } = item;
+          total.total_item += amount;
+          total.total_amount += amount * price;
+          return total;
+        },
+        {
+          total_item: 0,
+          total_amount: 0,
+        }
+      );
 
-      return { ...state, total_amount };
+      return { ...state, total_amount, total_item };
     }
 
     default:

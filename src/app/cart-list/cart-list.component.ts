@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Cart } from './cart.model';
+import * as CartActions from './store/cart.actions';
 
 @Component({
   selector: 'app-cart-list',
@@ -23,5 +24,10 @@ export class CartListComponent implements OnInit {
 
   onCheckout() {
     this.router.navigate(['/checkout']);
+  }
+
+  onClearCart() {
+    this.store.dispatch(new CartActions.clearCart());
+    this.store.dispatch(new CartActions.countCartTotals());
   }
 }

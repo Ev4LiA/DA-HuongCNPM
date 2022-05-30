@@ -189,20 +189,6 @@ p {
   background: var(--clr-grey-10);
 }
 
-/* social icons */
-.social-icons {
-  display: grid;
-  margin-top: 3rem;
-  width: 12rem;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-}
-.social-icon {
-  font-size: 1.5rem;
-  color: var(--clr-grey-1);
-  transform: var(--transition);
-}
-
 .social-icon:hover {
   color: var(--clr-primary-5);
 }
@@ -213,22 +199,4 @@ p {
   font-family: "Courgette", cursive;
   color: var(--clr-primary-2);
   text-shadow: 2px 2px 5px var(--clr-grey-6);
-}
-
-/* Single Page (Contact, About) */
-.single-page {
-  background: var(--clr-primary-10);
-  min-height: calc(100vh - 5rem - 198px);
-}
-.page-info {
-  max-width: 700px;
-}
-.page-info a {
-  text-transform: uppercase;
-  color: var(--clr-primary-5);
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-}
-.page-info a:hover {
-  color: var(--clr-primary-1);
 }

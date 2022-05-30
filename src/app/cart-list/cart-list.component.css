@@ -5,3 +5,18 @@
 h3 {
   color: var(--clr-primary-3);
 }
+
+.btn-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+}
+
+.btn-danger {
+  background-color: var(--clr-grey-2);
+  color: var(--clr-white);
+}
+
+.btn-danger:hover {
+  background-color: var(--clr-grey-5);
+}

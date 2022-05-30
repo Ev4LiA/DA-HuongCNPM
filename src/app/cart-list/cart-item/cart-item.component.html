@@ -5,9 +5,11 @@
     <div class="add-to-cart">
       <p class="amount">
         <span>Quantity: </span>
-        <fa-icon [icon]="faMinus" (click)="onMinus()"></fa-icon>
-        {{ cart.amount }}
-        <fa-icon [icon]="faPlus" (click)="onPlus()"></fa-icon>
+        <span class="amount-section">
+          <fa-icon [icon]="faMinus" (click)="onMinus()"></fa-icon>
+          {{ cart.amount }}
+          <fa-icon [icon]="faPlus" (click)="onPlus()"></fa-icon>
+        </span>
       </p>
       <div class="price">
         <span>

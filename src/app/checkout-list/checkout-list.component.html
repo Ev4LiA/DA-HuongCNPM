@@ -1,1 +1,5 @@
-<app-checkout-col></app-checkout-col>
+
+<app-checkout-item
+  *ngFor="let cartEl of (cartsState | async).carts"
+  [cart]="cartEl"
+></app-checkout-item>

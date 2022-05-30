@@ -40,6 +40,20 @@ p {
   bottom: 0;
 }
 
+.amount {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+}
+
+.amount-section {
+  width: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.disabled {
+  color: var(--clr-grey-9);
+}
+
 @media (min-width: 992px) {
   article {
     display: grid;

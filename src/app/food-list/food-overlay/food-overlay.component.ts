@@ -13,6 +13,8 @@ import { Food } from '../Food.model';
   styleUrls: ['./food-overlay.component.css'],
 })
 export class FoodOverlayComponent implements OnInit {
+  // public amount = new BehaviorSubject<number>(1);
+
   faPlus = faPlus;
   faMinus = faMinus;
 
@@ -20,7 +22,6 @@ export class FoodOverlayComponent implements OnInit {
 
   @Input() food: Food;
   @Output() close: EventEmitter<string> = new EventEmitter<string>();
-  amount: number = 1;
 
   constructor(
     private store: Store<{ carts: { carts: Cart[]; amount: number } }>
@@ -32,6 +33,9 @@ export class FoodOverlayComponent implements OnInit {
     this.close.emit('');
   }
 
+  itemAmount: number = 1;
+
+  amount: number = 1;
   onToggle(value: string) {
     if (value === 'desc') {
       this.amount--;
@@ -48,7 +52,11 @@ export class FoodOverlayComponent implements OnInit {
   onAddToCart() {
     this.onClose();
     this.store.dispatch(
-      new CartsActions.addToCart({ food: this.food, amount: this.amount })
+      new CartsActions.addToCart({
+        food: this.food,
+        amount: this.amount,
+      })
     );
+    this.store.dispatch(new CartsActions.countCartTotals());
   }
 }

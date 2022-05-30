@@ -1,0 +1,16 @@
+.topnav {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.topnav input[type="text"] {
+  float: right;
+  width: 500px;
+  height: 40px;
+  padding: 6px;
+  border: 1px solid var(--clr-primary-4);
+  border-radius: var(--radius);
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
