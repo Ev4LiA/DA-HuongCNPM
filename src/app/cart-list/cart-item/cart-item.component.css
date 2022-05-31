@@ -3,6 +3,16 @@ article {
   border: 1px solid var(--clr-primary-3);
   border-radius: var(--radius);
   margin: 10px 0px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  column-gap: 2rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+  article {
+    grid-template-columns: 75px 1fr;
+  }
 }
 
 .content {
@@ -17,7 +27,7 @@ img {
   display: block;
   object-fit: cover;
   border-radius: var(--radius);
-  margin: 5px 5px;
+  margin: 10px 10px;
 }
 h4 {
   margin-bottom: 0.5rem;
@@ -52,13 +62,4 @@ p {
 }
 .disabled {
   color: var(--clr-grey-9);
-}
-
-@media (min-width: 992px) {
-  article {
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    column-gap: 2rem;
-    align-items: center;
-  }
 }

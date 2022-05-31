@@ -7,7 +7,8 @@ let data: Food[] = [
     name: ' Skillet Chicken and Mushroom Wine Sauce ',
     status: true,
     price: 750000,
-    description: ' Fork tender, easy to make, flavorful and delicious! ',
+    description:
+      ' Fork tender, easy to make, flavorful and delicious! Fork tender, easy to make, flavorful and delicious! Fork tender, easy to make, flavorful and delicious! Fork tender, easy to make, flavorful and delicious! Fork tender, easy to make, flavorful and delicious! Fork tender, easy to make, flavorful and delicious! Fork tender, easy to make, flavorful and delicious! Fork tender, easy to make, flavorful and delicious! ',
     image:
       'https://www.savingdessert.com/wp-content/uploads/2015/10/Skillet-Chicken-and-Mushroom-Wine-Sauce-4-500x500.jpg',
     type: ['Breakfast'],
@@ -38,7 +39,7 @@ let data: Food[] = [
       'https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2018/Tomato_Basil_Chicken_Recipe-1.jpg',
     type: ['Main Dish'],
     __v: 0,
-  }
+  },
 ];
 
 export default data;

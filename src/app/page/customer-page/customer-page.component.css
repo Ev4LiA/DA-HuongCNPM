@@ -1,14 +1,23 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 400px;
-  column-gap: 10px;
-  padding: 0px 10px;
+@media screen and (min-width: 992px) {
+  .section-center {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+  }
+
+  .center {
+    margin-top: 10px;
+    padding-right: 25px;
+    border-right: 1px solid var(--clr-grey-5);
+  }
+
+  app-cart-list {
+    margin-top: 20px;
+    padding-left: 25px;
+  }
 }
 
-.center {
-  grid-column: 1 / 4;
-}
-
-app-cart-list {
-  grid-column: 4 / 5;
+@media screen and (max-width: 992px) {
+  app-cart-list {
+    padding-top: 100px;
+  }
 }
