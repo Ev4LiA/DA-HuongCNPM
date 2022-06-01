@@ -11,10 +11,18 @@ import * as CartActions from './store/cart.actions';
   styleUrls: ['./cart-list.component.css'],
 })
 export class CartListComponent implements OnInit {
-  cartsState: Observable<{ carts: Cart[]; total_amount: number }>;
-
+  cartsState: Observable<{
+    carts: Cart[];
+    total_amount: number;
+    total_item: number;
+  }>;
+  carts: Cart[];
+  total_amount: number;
+  total_item: number;
   constructor(
-    private store: Store<{ carts: { carts: Cart[]; total_amount: number } }>,
+    private store: Store<{
+      carts: { carts: Cart[]; total_amount: number; total_item: number };
+    }>,
     private router: Router
   ) {}
 
@@ -23,7 +31,20 @@ export class CartListComponent implements OnInit {
   }
 
   onCheckout() {
+    this.onSendCart();
     this.router.navigate(['/checkout']);
+  }
+
+  onSendCart() {
+    // send cart info to server
+
+    this.cartsState.subscribe(({ carts, total_amount, total_item }) => {
+      this.carts = carts;
+      this.total_amount = total_amount;
+      this.total_item = total_item;
+    });
+
+    // Cart list is now stored in this.carts, same with total_amount (tong gia), total_item (tong so item)
   }
 
   onClearCart() {

@@ -3,7 +3,7 @@
   padding: auto;
   width: 80vw;
   display: grid;
-  grid-template-columns: 400px repeat(4, 1fr);
+  grid-template-columns: 30vh repeat(4, 1fr);
   column-gap: 10px;
   border: 1px solid var(--clr-grey-5);
   border-radius: var(--radius);
