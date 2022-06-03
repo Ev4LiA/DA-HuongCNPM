@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Cart } from './cart.model';
+import SendCartApi from './send-cart-api';
 import * as CartActions from './store/cart.actions';
 
 @Component({
@@ -43,7 +44,7 @@ export class CartListComponent implements OnInit {
       this.total_amount = total_amount;
       this.total_item = total_item;
     });
-
+    SendCartApi(this.carts);
     // Cart list is now stored in this.carts, same with total_amount (tong gia), total_item (tong so item)
   }
 
