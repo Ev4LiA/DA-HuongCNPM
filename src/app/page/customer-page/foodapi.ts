@@ -1,10 +1,12 @@
 import axios from "axios";
-const url = "https://aad5-113-161-69-100.ap.ngrok.io"
+import BEurl from '../../../../url'
+
+
 
 const GetFoodApi = async () => {
   var config = {
     method: 'get',
-    url: url + "/menu",
+    url: BEurl + "/menu",
     headers: { 
       'Content-Type': 'application/json'
     },
