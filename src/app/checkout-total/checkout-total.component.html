@@ -1,0 +1,15 @@
+<div class="checkout-total">
+  <article>
+    <h5>
+      Subtotal: <span>{{ total_amount | currency: "USD":"symbol" }}</span>
+    </h5>
+    <p class="price">
+      Shipping fee : <span>{{ shipping_fee | currency: "USD":"symbol" }}</span>
+    </p>
+    <hr />
+    <h4>
+      Order total :
+      <span>{{ order_total | currency: "USD":"symbol" }}</span>
+    </h4>
+  </article>
+</div>

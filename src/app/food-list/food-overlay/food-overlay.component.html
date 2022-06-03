@@ -6,7 +6,7 @@
     <h3>{{ food.name }}</h3>
     <h4 class="price">
       <span>Price: </span>
-      {{ food.price }}
+      {{ food.price | currency: "USD":"symbol" }}
     </h4>
     <hr />
     <br />

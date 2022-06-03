@@ -9,17 +9,17 @@ export interface State {
 
 const initialState: State = {
   carts: [
-    {
-      id: 'FOOD0',
-      name: ' Skillet Chicken and Mushroom Wine Sauce ',
-      price: 750000,
-      image:
-        'https://www.savingdessert.com/wp-content/uploads/2015/10/Skillet-Chicken-and-Mushroom-Wine-Sauce-4-500x500.jpg',
-      amount: 1,
-    },
+    // {
+    //   id: 'FOOD0',
+    //   name: ' Skillet Chicken and Mushroom Wine Sauce ',
+    //   price: 750000,
+    //   image:
+    //     'https://www.savingdessert.com/wp-content/uploads/2015/10/Skillet-Chicken-and-Mushroom-Wine-Sauce-4-500x500.jpg',
+    //   amount: 1,
+    // },
   ],
   total_amount: 0,
-  total_item: 1,
+  total_item: 0,
 };
 
 export function CartReducer(

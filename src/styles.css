@@ -50,7 +50,7 @@ Variables
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
-  --spacing: 0.25rem;
+  --spacing: 0.1rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -79,6 +79,7 @@ body {
 ul {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
 }
@@ -90,13 +91,18 @@ img {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: var(--ff-primary);
 }
+
+p.price {
+  letter-spacing: var(--spacing);
+}
+
 h1 {
   font-size: 3rem;
 }

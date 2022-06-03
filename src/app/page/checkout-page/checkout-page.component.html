@@ -1,2 +1,14 @@
+<div class="header">
+  <h2>Order Confirmed Page</h2>
+  <h4>Not Accepted</h4>
+</div>
 <app-checkout-col></app-checkout-col>
 <app-checkout-list></app-checkout-list>
+<hr />
+<app-checkout-total></app-checkout-total>
+<div class="link-container">
+  <button class="link-btn btn-danger" (click)="onBackHome()">
+    Back To Home
+  </button>
+  <button class="link-btn" (click)="onCheckout()">payment</button>
+</div>

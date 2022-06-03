@@ -1,4 +1,4 @@
-.content {
+.container {
   margin: 10px auto;
   padding: auto;
   width: 80vw;
@@ -8,9 +8,14 @@
   border: 1px solid var(--clr-grey-5);
   border-radius: var(--radius);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  justify-items: center;
+  align-items: center;
+  background-color: var(--clr-primary-9);
 }
 
-h5 {
+h4 {
   color: var(--clr-grey-5);
   font-weight: 400;
+  margin-bottom: 0;
+  padding: 1rem;
 }

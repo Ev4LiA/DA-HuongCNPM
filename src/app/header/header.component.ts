@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { NgForm } from '@angular/forms';
 import * as FoodActions from '../food-list/store/food.action';
 
 @Component({
@@ -8,7 +9,9 @@ import * as FoodActions from '../food-list/store/food.action';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  // f: NgForm;
   text: string = '';
+
   constructor(
     private store: Store<{
       foods: {
@@ -23,7 +26,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   updateSearch() {
-    // console.log(this.text);
-    // this.store.dispatch(new FoodActions.updateSearch(this.text));
+    this.store.dispatch(new FoodActions.updateSearch(this.text));
+    this.store.dispatch(new FoodActions.filteredFoods());
   }
 }

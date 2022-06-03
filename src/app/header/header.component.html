@@ -1,10 +1,9 @@
 <div class="topnav">
-  <form action="" onsubmit="updateSearch">
-    <input
-      type="text"
-      placeholder="Search.."
-      [value]="text"
-      onsubmit="updateSearch"
-    />
-  </form>
+  <input
+    type="text"
+    name="text"
+    placeholder="Search.."
+    [(ngModel)]="text"
+    (keyup.enter)="updateSearch()"
+  />
 </div>

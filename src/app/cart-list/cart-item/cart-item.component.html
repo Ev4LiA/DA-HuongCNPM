@@ -13,7 +13,7 @@
       </p>
       <div class="price">
         <span>
-          <h4>Price: {{ cart.price }}</h4>
+          <h4>Price: {{ cart.price | currency: "USD":"symbol" }}</h4>
         </span>
         <fa-icon
           [icon]="faTrash"

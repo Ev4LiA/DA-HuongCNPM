@@ -3,7 +3,7 @@
     <img src="{{ food.image }}" alt="{{ food.name }}" />
     <div class="card-info">
       <h4 class="name">{{ food.name }}</h4>
-      <p>Price: {{ food.price }}</p>
+      <p class="price">Price: {{ food.price | currency: "USD":"symbol" }}</p>
     </div>
     <div class="card-footer">
       <button class="btn" (click)="onOpen()">Add To Cart</button>

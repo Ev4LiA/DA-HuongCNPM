@@ -32,6 +32,7 @@ export function FoodReducer(
     }
 
     case FoodActions.UPDATE_SEARCH: {
+      console.log(action.payload);
       return { ...state, filters: { ...state.filters, text: action.payload } };
     }
 
@@ -44,7 +45,7 @@ export function FoodReducer(
 
       if (text) {
         tempFoods = tempFoods.filter((item) => {
-          return item.name.toLowerCase().startsWith(text);
+          return item.name.toLowerCase().includes(text);
         });
       }
 

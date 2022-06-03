@@ -1,7 +1,7 @@
 <div class="container">
   <img src="{{ cart.image }}" alt="{{ cart.name }}" />
   <p>{{ cart.name }}</p>
-  <p>{{ cart.price }}</p>
+  <p class="price">{{ cart.price | currency: "USD":"symbol" }}</p>
   <p>{{ cart.amount }}</p>
-  <p>{{ total }}</p>
+  <p class="price">{{ total | currency: "USD":"symbol" }}</p>
 </div>

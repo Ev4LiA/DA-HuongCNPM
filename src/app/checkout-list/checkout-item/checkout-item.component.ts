@@ -8,6 +8,7 @@ import { Cart } from 'src/app/cart-list/cart.model';
 })
 export class CheckoutItemComponent implements OnInit {
   @Input() cart: Cart;
+
   total: number = 0;
 
   constructor() {}

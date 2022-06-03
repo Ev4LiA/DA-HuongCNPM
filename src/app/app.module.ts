@@ -19,6 +19,8 @@ import { CustomerPageComponent } from './page/customer-page/customer-page.compon
 import { CheckoutListComponent } from './checkout-list/checkout-list.component';
 import { CheckoutItemComponent } from './checkout-list/checkout-item/checkout-item.component';
 import { CheckoutColComponent } from './checkout-list/checkout-col/checkout-col.component';
+import { CheckoutTotalComponent } from './checkout-total/checkout-total.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,15 @@ import { CheckoutColComponent } from './checkout-list/checkout-col/checkout-col.
     CheckoutListComponent,
     CheckoutItemComponent,
     CheckoutColComponent,
+    CheckoutTotalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ carts: CartReducer, foods: FoodReducer }),
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
